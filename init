@@ -1,0 +1,14 @@
+#/bin/env bash
+
+REPO_DIR="$HOME/repositories/github.com/rik-vl/dots"
+REPO_URL="https://github.com/rik-vl/dots.git"
+
+git init --bare $REPO_URL $REPO_DIR
+
+DOTS_CMD="alias dots='git --git-dir=$REPO_DIR --work-tree=$HOME'"
+
+eval $DOTS_CMD
+dots config --local status.showUntrackedFiles no
+
+echo $DOTS_CMD >> $HOME/.bashrc
+echo "source $HOME/.dotsrc" >> $HOME/.bashrc
