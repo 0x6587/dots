@@ -1,0 +1,41 @@
+# STATUS BAR
+bar {
+	position bottom
+	status_command i3blocks
+	workspace_min_width 32
+	height 32
+	gaps 4
+	colors {
+		inactive_workspace #253237 #253237 #ffffff	
+		focused_workspace #7E4DB3 #7E4DB3 #ffffff
+	}
+}
+
+# WINDOW DECORATIONS
+for_window [class="^.*"] border pixel 0
+default_border pixel 0
+default_floating_border pixel 0
+
+client.focused #d4d4d4 #d4d4d4 #ffffff #d4d4d4 #d4d4d4
+
+set $default_gaps_inner 2
+set $default_gaps_outer 2
+gaps inner $default_gaps_inner
+gaps outer $default_gaps_outer
+
+# GTK DECORATIONS
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
+    gsettings set $gnome-schema cursor-theme 'Adwaita'
+}
+
+# GESTURES
+exec libinput-gestures-setup restart
+
+# NOTIFICATIONS
+exec mako
+
+# WORKSPACE ICONS
+exec eval $(python $HOME/.config/sway/workspaces.py)

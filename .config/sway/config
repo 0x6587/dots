@@ -1,0 +1,13 @@
+set $mod Mod4
+set $term alacritty
+
+set $laptop_screen "eDP-1"
+
+set $touchpad "1739:52542:MSFT0001:00_06CB:CD3E_Touchpad"
+set $mouse "1133:16514:Logitech_MX_Master_3"
+set $keyboard "1133:16522:Logitech_MX_Keys"
+set $extra_buttons "0:0:Ideapad_extra_buttons"
+
+set $accent = $DE_ACCENT_COLOR
+
+include $HOME/.config/sway/config.d/*

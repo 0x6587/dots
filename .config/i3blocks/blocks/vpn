@@ -1,0 +1,4 @@
+#!/bin/bash
+ip route | grep -q '10.0.2.1' \
+&& echo 'VPN ON' \
+|| echo 'VPN OFF'

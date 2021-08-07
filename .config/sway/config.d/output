@@ -1,0 +1,11 @@
+# DISPLAY CONFIGURATION
+output $laptop_screen {
+	scale 1.5
+	pos 0 0
+	res 2560x1440	
+	#scale_filter nearest
+}
+
+# CLAMSHELL
+bindswitch --reload --locked lid:on output $laptop_screen disable
+bindswitch --reload --locked lid:off output $laptop_screen enable

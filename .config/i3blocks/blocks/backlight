@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+STEP_SIZE=${STEP_SIZE:-5}
+
+XBACKLIGHT_SET="brightnessctl set"
+
+BRIGHTNESS=$(brightnessctl g)
+BRIGHTNESS=$((BRIGHTNESS  * 100 / 255))
+
+LABEL=" ${BRIGHTNESS}%"
+
+case $BLOCK_BUTTON in
+  4) $XBACKLIGHT_SET "$STEP_SIZE"- >> /dev/null && $LABEL ;; # scroll up
+  5) $XBACKLIGHT_SET +"$STEP_SIZE" >> /dev/null && $LABEL ;; # scroll down, decrease
+esac
+
+echo $LABEL

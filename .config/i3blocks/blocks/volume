@@ -1,0 +1,13 @@
+#!/bin/bash
+#----------------------------------------------------------------------------------------------------
+#Mouse actions for the block
+case $BLOCK_BUTTON in
+	1) pamixer -t ;;
+	4) pamixer -d 10 ;;
+	5) pamixer -i 10 ;;
+esac
+
+#Toggle mute
+[[ $(pamixer --get-mute) = "true" ]] && echo " off" && exit
+#Display volume
+echo  $(pamixer --get-volume)%;
