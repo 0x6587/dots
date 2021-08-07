@@ -12,6 +12,11 @@ Arch:
  - mako
  - python
  - pass
+ - wtype
+ - grim
+ - slurp
+ - wl-clipboard
+ - perl
 
 AUR:
  - wob
